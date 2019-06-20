@@ -27,19 +27,16 @@ function dec(n) {
 }
 
 function makeInt(n) {
-  return parseInt(n)
+  if(isNaN(n)) {
+    return true;
+  }
+  else{ 
+  return parseInt(n, 10)
 }
 
-
-it('assumes base 10', function() {
-    expect(makeInt('0x2328')).toEqual(0)
-  })
-
-  it('returns NaN as appropriate', function() {
-    expect(isNaN(makeInt('sldkjflksjf'))).toEqual(true)
-  })
-})
-
+function preserveDecimal(n) {
+  
+}
 describe('preserveDecimal(n)', function() {
   it('preserves n\'s decimals (it parses n as a floating point number) and returns the parsed number', function() {
     expect(preserveDecimal('2.222')).toBe(2.222)
